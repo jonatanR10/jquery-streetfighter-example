@@ -1,3 +1,4 @@
+// if Hadouken sound is not playing
 var hadoukenSound = false;
 function playHadouken () {
 	hadoukenSound = !hadoukenSound;
@@ -7,7 +8,7 @@ function playHadouken () {
 	}
 }
 
-$(document).ready(function() {
+function playGame() {
 	$('.ryu').mouseenter(function() {
 		$('.ryu-action').hide();
 		$('.ryu-ready').show();
@@ -33,14 +34,38 @@ $(document).ready(function() {
 	});
 
 	$(document).keydown(function(e) {
-		if (e.keyCode == 32) {
+		if (e.keyCode == 88) {
 			$('.ryu-action').hide();
-			$('.ryu-jump').show();
-		}
+			$('.ryu-cool').show();
+		}		
 	}).keyup(function(e) {
-		if (e.keyCode == 32) {
-			$('.ryu-action').hide();
+		if (e.keyCode == 88) {
+			$('.ryu-cool').hide();
 			$('.ryu-ready').show();
 		}
+	});
+}
+
+function doIntro() {
+	$('#theme-song')[0].play();
+	$('.sf-logo').fadeIn(3500, function() {
+		$(this).fadeOut(1000, function() {
+			$('.brought-by').fadeIn(1500, function() {
+				$(this).fadeOut(1000, function() {
+					$('.jquery-logo').fadeIn(1500, function() {
+						$(this).fadeOut(1500, function() {
+							$('.how-to').fadeIn(1000, function() {
+								$(this).delay(5000).fadeOut(500);
+							})
+						});
+					})
+				})
+			})
+		})
 	})
+}
+
+$(document).ready(function() {
+	doIntro();
+	playGame();
 });
