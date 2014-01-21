@@ -32,12 +32,14 @@ em {
 	background-image: url('../images/hadouken.gif');
 	width: 156px;	
 	height: 90px;
-	margin-left: 420px;
+	margin-left: 380px;
 	margin-top: -316px;
+	float: left;
 	display: none;
 }
 
-.ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
+
+.ryu, .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
 	width: 659px;
 	height: 494px;
 }
