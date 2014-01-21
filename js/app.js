@@ -1,21 +1,46 @@
+var hadoukenSound = false;
+function playHadouken () {
+	hadoukenSound = !hadoukenSound;
+	if (hadoukenSound) {
+		$('#hadouken-sound')[0].load()
+		$('#hadouken-sound')[0].play();
+	}
+}
+
 $(document).ready(function() {
 	$('.ryu').mouseenter(function() {
-		$(this).toggleClass('ryu-still ryu-ready');
+		$('.ryu-action').hide();
+		$('.ryu-ready').show();
 	})
-	.mouseleave(function() {
-		$(this).toggleClass('ryu-still ryu-ready');
-	}).mousedown(function() {
-		$(this).addClass('ryu-throwing');
-		var hadouken = '<div class="hadouken"></div>';
-		$(this).append(hadouken);
-		$('.hadouken').animate(
-			{'right': -100}, 
-			1000, 
-			function() {
-				this.remove();
-			});
-	}).mouseup(function() {
-		$(this).removeClass('ryu-throwing');
-		$(this).addClass('ryu-still');
+	.mousedown(function() {
+		playHadouken();
+		$('.ryu-action').hide();	
+		$('.ryu-throwing').show();
+		$('.hadouken').finish().show()
+			.animate(
+				{'margin-left': '1000px'},
+				1000,
+				function() {
+					$(this).stop();
+					$(this).hide();
+					$(this).css('margin-left', 420);
+				}
+			);
+	})
+	.mouseup(function() {
+		$('.ryu-action').hide();
+		$('.ryu-ready').show();
 	});
+
+	$(document).keydown(function(e) {
+		if (e.keyCode == 32) {
+			$('.ryu-action').hide();
+			$('.ryu-jump').show();
+		}
+	}).keyup(function(e) {
+		if (e.keyCode == 32) {
+			$('.ryu-action').hide();
+			$('.ryu-ready').show();
+		}
+	})
 });
