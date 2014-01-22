@@ -7,7 +7,8 @@ var hadoukenSound = false;
 function playHadouken () {
   hadoukenSound = !hadoukenSound;
   if (hadoukenSound) {
-    $('#hadouken-sound')[0].load()
+    $('#hadouken-sound')[0].volume = 0.5;
+    $('#hadouken-sound')[0].load();
     $('#hadouken-sound')[0].play();
   }
 }
@@ -33,12 +34,12 @@ function playGame() {
     $('.ryu-throwing').show();
     $('.hadouken').finish().show()
       .animate(
-        {'margin-left': '800px'},
-        800,
+        {'left': '300px'},
+        500,
         function() {
           $(this).stop();
           $(this).hide();
-          $(this).css('margin-left', 420);
+          $(this).css('left', '-212px');
         }
       );
   })
@@ -55,6 +56,8 @@ function playGame() {
     }   
   }).keyup(function(e) {
     if (e.keyCode == 88) {
+      $('#cool')[0].pause();
+      $('#cool')[0].load();
       $('.ryu-cool').hide();
       $('.ryu-ready').show();
     }
@@ -62,6 +65,7 @@ function playGame() {
 }
 
 function doIntro() {
+  $('#theme-song')[0].volume = 0.3;
   $('#theme-song')[0].play();
   $('.sf-logo').fadeIn(3500, function() {
     $(this).fadeOut(1000, function() {

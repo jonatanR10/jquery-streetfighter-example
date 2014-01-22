@@ -3,7 +3,6 @@
 	src: url('../fonts/animeace2_reg.otf');
 }
 
-
 body {
 	background-color: black;
 }
@@ -17,10 +16,7 @@ em {
 	margin-top: 110px;
 	min-width: 1200px;
 	padding-left: 100px;
-}
-
-.container {
-	background-color: inherit;
+	min-height: 500px;
 	position: relative;
 }
 
@@ -32,12 +28,16 @@ em {
 	background-image: url('../images/hadouken.gif');
 	width: 156px;	
 	height: 90px;
-	margin-left: 380px;
-	margin-top: -316px;
-	float: left;
-	display: none;
 	position: relative;
+	top: 167px;
+	left: -212px;
 	z-index: 10;
+	float: left;
+	display:none;
+}
+
+.ryu-container, .ryu {
+	float:left;
 }
 
 .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
@@ -64,13 +64,18 @@ em {
 	background-image: url('../images/ryu-throwing-hadouken.png');
 }
 
+.text-content{
+	position: absolute;
+	left: 650px;
+	height: 425px;
+	width: 600px;
+	padding-top: 75px;
+}
+
 .sf-logo {
 	background-image: url('../images/sf-logo.png');
 	width: 682px;
 	height: 314px;
-	position: absolute;	
-	top: 40px;
-	left: 420px;
 	display: none;
 }
 
@@ -78,29 +83,26 @@ em {
 	background-image: url('../images/jquery-logo.png');
 	width: 500px;
 	height: 172px;
-	position: absolute;
-	top: 120px;
-	left: 450px;
 	display: none;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .brought-by, .how-to {
 	display: none;
-	position: absolute;
 	color: red;
 	font-family: comical;
 	font-size: 50px;
-	left: 540px;
 	width: 600px;
 }
 
 .brought-by {
-	top: 200px;
 	text-align: center;
+	margin-top: 100px;
 }
 
 .how-to {
-	top: 100px;
 }
 
 .how-to p {
