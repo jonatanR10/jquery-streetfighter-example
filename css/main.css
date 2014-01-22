@@ -1,3 +1,8 @@
+@font-face{
+	font-family: comical;
+	src: url('../fonts/animeace2_reg.otf');
+}
+
 
 body {
 	background-color: black;
@@ -6,24 +11,19 @@ body {
 em {
 	font-style: italic;
 }
+
 .main {
 	background: white;
-	width: 100%;
-	height: 500px;
 	margin-top: 110px;
+	min-width: 1200px;
+	padding-left: 100px;
 }
 
 .container {
-	min-width: 800px;
-	margin-left: 100px;
+	background-color: inherit;
 	position: relative;
 }
 
-
-.intro {
-	display: none;
-	color: blue;
-}
 .hadouken, .ryu-cool, .ryu-ready, .ryu-still, .ryu-throwing {
 	background-repeat: no-repeat;
 }
@@ -36,17 +36,16 @@ em {
 	margin-top: -316px;
 	float: left;
 	display: none;
+	position: relative;
+	z-index: 10;
 }
 
-
-.ryu, .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
+.ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
 	width: 659px;
 	height: 494px;
 }
 
 .ryu-ready, .ryu-throwing, .ryu-cool {
-	width: 659px;
-	height: 494px;
 	display: none;
 }	
 
@@ -89,15 +88,30 @@ em {
 	display: none;
 	position: absolute;
 	color: red;
+	font-family: comical;
 	font-size: 50px;
-	top: 200px;
 	left: 500px;
+	width: 600px;
+}
+
+.brought-by {
+	top: 200px;
+	text-align: center;
+}
+
+.how-to {
+	top: 100px;
 }
 
 .how-to p {
+	width: 50%;
 	color: black;
 	font-size: 33px;
 	line-height: 45px;
-	margin-bottom: 5px;
+}
+
+.how-to p + p {
+	margin-top: -25px;
+	margin-left: 275px;
 }
 
