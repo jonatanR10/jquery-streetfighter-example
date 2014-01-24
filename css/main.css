@@ -108,12 +108,11 @@ em {
 .how-to p {
 	width: 50%;
 	color: black;
-	font-size: 33px;
+	font-size: 24px;
 	line-height: 45px;
 }
 
 .how-to p + p {
-	margin-top: -25px;
 	margin-left: 275px;
 }
 
